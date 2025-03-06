@@ -1,0 +1,64 @@
+
+
+.responsive-card {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+.avatar img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #ff5722;
+  font-size: 1.1em;
+}
+
+.category {
+  color: #757575;
+  font-size: 0.9em;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.1em;
+  }
+
+  .price {
+    font-size: 1em;
+  }
+
+  .category {
+    font-size: 0.85em;
+  }
+}

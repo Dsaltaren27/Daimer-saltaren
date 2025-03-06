@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content mode="ios">
+  <div class="glass-content">
+
+    <app-loader *ngIf="loading"></app-loader>
+
+    <ion-grid *ngIf="!loading">
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-grid>
+            <ion-row class="ion-justify-content-center ion-align-items-center">
+              <ion-col size="auto" class="ion-padding-horizontal">
+                <ion-searchbar placeholder="Nombre del producto" class="small-searchbar"></ion-searchbar>
+              </ion-col>
+              <ion-col size="auto" class="ion-padding-horizontal">
+                <ion-item class="small-select">
+                  <ion-label>Categorías</ion-label>
+                  <ion-select [(ngModel)]="selectedCategory" (ionchange)="filterProducts()">
+                    <ion-select-option value="all">Todas</ion-select-option>
+                    <ion-select-option *ngFor="let category of categories" [value]="category">
+                      {{ category }}
+                    </ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+      
+      <!-- Productos filtrados -->
+      <ion-row>
+        <ion-col class="ion-padding" *ngFor="let p of filteredProducts" size-lg="6" size-md="6" size-sm="12" size="12">
+          <app-products-card [Product]="p"></app-products-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

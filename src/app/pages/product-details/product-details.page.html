@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<ion-content class="product-details">
+  <ion-card>
+    <ion-card-header>
+      <ion-avatar class="avatar">
+        <img [src]="Product?.image" alt="Imagen del Producto" />
+      </ion-avatar>
+      <div class="title">{{ Product?.title }}</div>
+      <div class="price">Price: {{Product?.price | currency }}</div>
+      <p class="category">Category: {{Product?.category }}</p>
+      <p class="description">Description: {{Product?.description}}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" (click)="addcart(Product)">
+        Agregar al carrito
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

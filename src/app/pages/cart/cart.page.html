@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-card class="productCart-wrapper">
+    <ion-card-content *ngFor="let product of cartp$ | async">
+      <ion-grid class="productCart-body">
+        <ion-row>
+          <ion-col size="3">
+            <ion-avatar>
+              <img class="image" [src]="product.image" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="6">
+            <p class="title">{{product.title}}</p>
+            <p class="price">Price: {{product.price | currency}}</p>
+            <p class="cantidad">Cantidad: {{product.cantidad}}</p>
+            <p>Total: ${{ totalproduct(product.price, product.cantidad) | currency }}</p>
+          </ion-col>
+          <ion-col size="3" class="ion-text-end">
+            <ion-button color="danger" class="minus" (click)="updateunit('minus', product.id)">-</ion-button>
+            <ion-button color="success" class="add" (click)="updateunit('add', product.id)">+</ion-button>
+            <ion-button (click)="deleteproduct(product.id)">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    
+    <ion-grid class="productCart-total">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <p>Total: ${{totalcart() | currency}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="productCart-buttons">
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="primary">
+            Ir a mi cesta
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

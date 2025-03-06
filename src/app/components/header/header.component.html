@@ -1,0 +1,17 @@
+
+<ion-header mode="md">
+  <ion-toolbar>
+    <!--Boton retornar-->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <!-- Boton de carrito -->
+    <ion-buttons slot="end" (click)="navigatecart()">
+      <ion-button >
+        <ion-icon name="cart" slot="icon-only"></ion-icon>
+        <!-- cantidad de productos en el carrito -->
+        <ion-badge color="danger" mode="ios" class="cart-badge">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

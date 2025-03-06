@@ -1,0 +1,7 @@
+{
+  "name": "parcial-store",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

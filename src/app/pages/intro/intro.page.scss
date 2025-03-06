@@ -1,0 +1,6 @@
+ion-content {
+    --ion-background-color: transparent; /* Hace que el fondo de Ionic no interfiera */
+    background: url(/assets/img/store.gif) no-repeat center center fixed;
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+    color: white; /* Asegura que el texto sea visible */
+}

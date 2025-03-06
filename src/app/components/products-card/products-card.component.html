@@ -1,0 +1,23 @@
+<ion-card class="responsive-card">
+  <ion-grid>
+    <ion-row>
+      <!-- Columna que contiene la imagen -->
+      <ion-col size="4" class="ion-padding">
+        <ion-avatar class="avatar">
+          <img [src]="Product.image" alt="Product Image" />
+        </ion-avatar>
+      </ion-col>
+
+      <!-- Columna que contiene el título, precio, categoría, etc -->
+      <ion-col size="8" class="ion-padding">
+        <div class="title">{{ Product.title }}</div>
+        <div class="price">Price: {{ Product.price }}</div>
+        <p class="category">Category: {{ Product.category }}</p>
+  
+        <ion-button *ngIf="Homepage" [routerLink]="['/product-details',Product.id]">
+          Ver detalles
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
